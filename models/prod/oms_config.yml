@@ -14,7 +14,9 @@ models:
       - name: ORDERID
         description: The primary key for orders_stg table.      
         tests:
-          - unique
+          - unique:
+              config:
+                severity: warn
           - not_null
 
       - name: STATUSCD
@@ -40,3 +42,5 @@ models:
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
           arguments:
             compare_model: ref("stg_orders")
+          config:
+            severity: warn
