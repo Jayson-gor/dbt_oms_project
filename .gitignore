@@ -1,3 +1,4 @@
 dbt_venv/
 logs/
 *.log
+dbt_internal_packages/
